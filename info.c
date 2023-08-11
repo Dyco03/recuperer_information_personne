@@ -26,15 +26,15 @@ int main(){
 	
 	/*************************/
 	int choix;
-	printf("Combien de personne etes-vous:");scanf("%d",&choix);
+	printf("Combien de personne etes-vous?:");scanf("%d",&choix);
 	getchar();//pour prendre le '\n'
 	printf("Vous allez entrer les informations.\n");
 	/*************************premier teste*/
 	int nbr_total=nbr_recup + choix;
 	personne=realloc(personne,nbr_total*sizeof(information));  //deuxieme allocation de personne
 	/*************************/
-	for(int i=nbr_recup; i<nbr_total; i++){
-		printf("personne%d\n",choix);
+	for(int i=nbr_recup, j=1; i<nbr_total; i++, j++){
+		printf("personne%d\n",j);
 		printf("Entrer les informations.\n");
 		printf("Nom:");fgets(personne[i].nom,30,stdin);
 		personne[i].nom[strcspn((personne[i].nom),"\n")]='\0';//pour supprimer les caracteres de fin de chaines
